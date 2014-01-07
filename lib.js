@@ -2,6 +2,15 @@
 
 'use strict';
 
+// help function
+module.exports.help = function () {
+	// TODO: write a help page
+	console.log('Help is still in the TODO list');
+}
+
+// alias
+module.exports.h = module.exports.help;
+
 // base64 encoding function
 module.exports.encode = function (x) {
 	if (x) {
