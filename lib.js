@@ -3,7 +3,7 @@
 'use strict';
 
 // base64 encoding function
-module.exports.encoding = function (x) {
+module.exports.encode = function (x) {
 	if (x) {
 		// if an argument was passed
 		// then base64-encode it and return the value
@@ -17,10 +17,10 @@ module.exports.encoding = function (x) {
 }
 
 // alias
-module.exports.e = module.exports.encoding;
+module.exports.e = module.exports.encode;
 
 // base64 decoding function
-module.exports.decoding = function (x) {
+module.exports.decode = function (x) {
 	if (x) {
 		// if an argument was passed
 		// then base64-decode it and return the value
@@ -34,4 +34,4 @@ module.exports.decoding = function (x) {
 }
 
 // alias
-module.exports.d = module.exports.decoding;
+module.exports.d = module.exports.decode;
