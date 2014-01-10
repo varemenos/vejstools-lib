@@ -36,7 +36,7 @@ module.exports.decode = function (x) {
 // alias
 module.exports.d = module.exports.decode;
 
-// string to unicode encoding function
+// char to unicode encoding function
 module.exports.encodeUnicode = function (x) {
 	if (x) {
 		// if an argument was passed
@@ -50,16 +50,16 @@ module.exports.encodeUnicode = function (x) {
 	}
 }
 
-// string to unicode decoding function
+// char to unicode decoding function
 module.exports.decodeUnicode = function (x) {
 	if (x) {
 		// if an argument was passed
 		// then decode it in unicode and return the value
 		var temp = '';
 		for (var i = 0; i < x.length; i++) {
-			temp += x.charCodeAt(i);
+			temp += x.charCodeAt(i) + ', ';
 		}
-		return temp;
+		return temp.slice(0, -2);
 	} else {
 		// else print error message
 		console.log('Nothing to decode in unicode. The decodeUnicode option requires a parameter');
