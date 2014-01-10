@@ -2,15 +2,6 @@
 
 'use strict';
 
-// help function
-module.exports.help = function () {
-	// TODO: write a help page
-	console.log('Help is still in the TODO list');
-}
-
-// alias
-module.exports.h = module.exports.help;
-
 // base64 encoding function
 module.exports.encode = function (x) {
 	if (x) {
@@ -44,3 +35,45 @@ module.exports.decode = function (x) {
 
 // alias
 module.exports.d = module.exports.decode;
+
+// string to unicode encoding function
+module.exports.encodeUnicode = function (x) {
+	if (x) {
+		// if an argument was passed
+		// then encode it in unicode and return the value
+		return String.fromCharCode(x);
+	} else {
+		// else print error message
+		console.log('Nothing to encode in unicode. The encodeUnicode option requires a parameter');
+		// and exit
+		return -1;
+	}
+}
+
+// string to unicode decoding function
+module.exports.decodeUnicode = function (x) {
+	if (x) {
+		// if an argument was passed
+		// then decode it in unicode and return the value
+		var temp = '';
+		for (var i = 0; i < x.length; i++) {
+			temp += x.charCodeAt(i);
+		}
+		return temp;
+	} else {
+		// else print error message
+		console.log('Nothing to decode in unicode. The decodeUnicode option requires a parameter');
+		// and exit
+		return -1;
+	}
+}
+
+// help function
+module.exports.help = function () {
+	// TODO: write a help page
+	// go through all modules.exports keys, removed aliases and add them in the help message
+	console.log('Help is still in the TODO list');
+}
+
+// alias
+module.exports.h = module.exports.help;
